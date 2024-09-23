@@ -1,0 +1,92 @@
+{
+  "uuid": "934d74d1-f2a0-4f06-83e7-96a5def675c8",
+  "lastMigration": 32,
+  "name": "Mockoon",
+  "endpointPrefix": "api",
+  "latency": 0,
+  "port": 3002,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "4f5e0ad0-fc08-4282-bc97-1b638a182b45",
+      "type": "http",
+      "documentation": "get all feeds",
+      "method": "get",
+      "endpoint": "feeds",
+      "responses": [
+        {
+          "uuid": "21a64448-3734-4ede-ad39-4ed91bfeb686",
+          "body": "{\n  \"feeds\": [\n    {\n      \"title\": \"Nouveautés d'Angular 18: RIP zone.js\",\n      \"description\": \"Zone.js, responsable de la détection de changement dans Angular, est remplacé par un support sans zones offrant des améliorations en termes de performance, composabilité, et débogage simplifié.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"Avantages du mode sans zones\",\n      \"description\": \"Le mode sans zones améliore la composabilité pour les micro-frontends, le rendu plus rapide, la taille de bundle réduite, et des traces de pile plus lisibles, rendant le développement Angular plus efficace.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"Utilisation des signaux dans Angular\",\n      \"description\": \"Les signaux dans Angular permettent de mettre à jour l'interface utilisateur sans zone.js, offrant une méthode de gestion des états réactive et performante, avec un planificateur de coalescence intégré.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"Coalescence des événements par défaut\",\n      \"description\": \"La coalescence des événements est activée par défaut dans Angular 18, réduisant les cycles de détection de changement inutiles et améliorant les performances des applications, en particulier pour les nouvelles installations.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"Await natif pour les applications sans zones\",\n      \"description\": \"Angular 18 utilise async/await natif sans transformer en promesses, améliorant le débogage et réduisant la taille des bundles, optimisant ainsi les applications sans zones pour les navigateurs modernes.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"Support du mode sans zones dans Angular CDK et Material\",\n      \"description\": \"Angular 18 active le support sans zones dans Angular CDK et Material, perfectionnant le modèle sans zones et offrant une expérience de développement plus fluide et cohérente.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"L'hydratation dans Angular 18\",\n      \"description\": \"L'hydratation, processus où une page rendue côté serveur devient interactive, est optimisée dans Angular 18 avec une hydratation partielle pour améliorer les performances et l'expérience utilisateur.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"Event Replay dans Angular 18\",\n      \"description\": \"Angular 18 introduit la relecture des événements pour assurer que les interactions utilisateur ne sont pas perdues pendant l'hydratation, améliorant l'expérience utilisateur sur les connexions lentes.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"Hydratation partielle dans Angular\",\n      \"description\": \"L'hydratation partielle dans Angular permet de rendre une application interactive de manière incrémentielle, améliorant les performances en chargeant moins de JavaScript dès le départ.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"Spécification de contenu de repli pour ng-content\",\n      \"description\": \"Angular 18 permet de spécifier un contenu par défaut pour ng-content, offrant plus de flexibilité et améliorant l'expérience développeur avec des options de rendu conditionnelles simplifiées.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"Événements unifiés de changement d'état des contrôles\",\n      \"description\": \"Les formulaires Angular exposent une propriété 'events' dans FormControl, FormGroup, et FormArray, permettant de suivre les changements d'état des contrôles de formulaire de manière centralisée.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Angular\",\n      \"link\": \"https://angular.fr/news/angular18\"\n    },\n    {\n      \"title\": \"nouvelle version de spring boot \",\n      \"description\": \"Spring 3.3 apporte des améliorations telles que le support CDS pour un démarrage plus rapide et une consommation de mémoire réduite, des améliorations d'observabilité avec Micrometer et Prometheus, des améliorations de sécurité avec une auto-configuration pour JwtAuthenticationConverter, et un support de connexion pour Apache ActiveMQ Artemis et LDAP.\",\n      \"date\": \"2024-05-23T08:00:00Z\",\n      \"category\": \"Spring\",\n      \"link\": \"https://spring.io/blog/2024/05/23/spring-boot-3-3-0-available-now\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "4f5e0ad0-fc08-4282-bc97-1b638a182b45"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}

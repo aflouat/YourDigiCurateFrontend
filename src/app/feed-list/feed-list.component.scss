@@ -1,0 +1,28 @@
+.container {
+  max-width: 800px !important;
+  margin: 0 auto !important;
+  padding: 20px !important;
+}
+
+
+.header {
+  margin-bottom: 20px;
+}
+
+.search-bar {
+  margin: 20px 0;
+}
+
+.feeds-container {
+  display: block;  /* Affichage en bloc pour une seule colonne */
+}
+
+.feed-item {
+  margin: 20px auto;  /* Centrer horizontalement */
+  max-width: 100%;  /* S'assurer que les éléments occupent toute la largeur disponible */
+}
+
+.hovered {
+  background-color: #f0f8ff; /* Light blue */
+  transition: background-color 0.3s ease;
+}

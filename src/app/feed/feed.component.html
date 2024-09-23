@@ -1,0 +1,8 @@
+<div class="feed">
+  <h2>{{ feed.title }}</h2>
+  <p>{{ feed.description }}</p>
+  <p><strong>Date:</strong> {{ feed.date | date:'mediumDate' }}</p>
+  <p><strong>Category:</strong> {{ feed.category }}</p>
+  <a [href]="feed.link" target="_blank">Lire plus</a>
+</div>
+

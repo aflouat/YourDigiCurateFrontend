@@ -1,0 +1,81 @@
+{
+  "feeds": [
+    {
+      "title": "Nouveautés d'Angular 18: RIP zone.js",
+      "description": "Zone.js, responsable de la détection de changement dans Angular, est remplacé par un support sans zones offrant des améliorations en termes de performance, composabilité, et débogage simplifié.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    },
+    {
+      "title": "Avantages du mode sans zones",
+      "description": "Le mode sans zones améliore la composabilité pour les micro-frontends, le rendu plus rapide, la taille de bundle réduite, et des traces de pile plus lisibles, rendant le développement Angular plus efficace.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    },
+    {
+      "title": "Utilisation des signaux dans Angular",
+      "description": "Les signaux dans Angular permettent de mettre à jour l'interface utilisateur sans zone.js, offrant une méthode de gestion des états réactive et performante, avec un planificateur de coalescence intégré.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    },
+    {
+      "title": "Coalescence des événements par défaut",
+      "description": "La coalescence des événements est activée par défaut dans Angular 18, réduisant les cycles de détection de changement inutiles et améliorant les performances des applications, en particulier pour les nouvelles installations.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    },
+    {
+      "title": "Await natif pour les applications sans zones",
+      "description": "Angular 18 utilise async/await natif sans transformer en promesses, améliorant le débogage et réduisant la taille des bundles, optimisant ainsi les applications sans zones pour les navigateurs modernes.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    },
+    {
+      "title": "Support du mode sans zones dans Angular CDK et Material",
+      "description": "Angular 18 active le support sans zones dans Angular CDK et Material, perfectionnant le modèle sans zones et offrant une expérience de développement plus fluide et cohérente.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    },
+    {
+      "title": "L'hydratation dans Angular 18",
+      "description": "L'hydratation, processus où une page rendue côté serveur devient interactive, est optimisée dans Angular 18 avec une hydratation partielle pour améliorer les performances et l'expérience utilisateur.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    },
+    {
+      "title": "Event Replay dans Angular 18",
+      "description": "Angular 18 introduit la relecture des événements pour assurer que les interactions utilisateur ne sont pas perdues pendant l'hydratation, améliorant l'expérience utilisateur sur les connexions lentes.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    },
+    {
+      "title": "Hydratation partielle dans Angular",
+      "description": "L'hydratation partielle dans Angular permet de rendre une application interactive de manière incrémentielle, améliorant les performances en chargeant moins de JavaScript dès le départ.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    },
+    {
+      "title": "Spécification de contenu de repli pour ng-content",
+      "description": "Angular 18 permet de spécifier un contenu par défaut pour ng-content, offrant plus de flexibilité et améliorant l'expérience développeur avec des options de rendu conditionnelles simplifiées.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    },
+    {
+      "title": "Événements unifiés de changement d'état des contrôles",
+      "description": "Les formulaires Angular exposent une propriété 'events' dans FormControl, FormGroup, et FormArray, permettant de suivre les changements d'état des contrôles de formulaire de manière centralisée.",
+      "date": "2024-05-23T08:00:00Z",
+      "category": "Angular",
+      "link": "https://angular.fr/news/angular18"
+    }
+  ]
+}
