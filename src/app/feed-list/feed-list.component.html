@@ -1,0 +1,37 @@
+<div class="container">
+  <header class="header">
+    <h1 class="text-center">Feed List</h1>
+    <div class="search-bar text-center">
+      <input [(ngModel)]="searchQuery"
+             (change)="applySearchFilterAndPaginate()" class="form-control" placeholder="Search feeds..." />
+    </div>
+  </header>
+
+  <div class="feeds-container d-flex justify-content-center flex-wrap">
+
+<div *ngFor="let feed of displayedFeeds; trackBy: trackByTitle"
+     (mouseover)="toggleHover(feed, true)"
+     (mouseout)="toggleHover(feed, false)"
+     [ngClass]="{'hovered': feed.hover}">
+  <div class="card-body">
+    <h5 class="card-title">{{ feed.title }}</h5>
+    <p class="card-text">{{ feed.description }}</p>
+    <a href="{{feed.link}}" target="_blank">Lire la suite</a>
+    <p class="card-text"><small class="text-muted">{{ feed.date | date:'mediumDate' }} - {{ feed.category }}</small></p>
+  </div>
+</div>
+
+
+    <!-- Pagination Controls -->
+    <div class="pagination-controls text-center mt-3">
+      <button (click)="previousPage()" [disabled]="currentPage === 1" class="btn btn-primary">
+        Previous
+      </button>
+
+      <span>Page {{currentPage}} of {{totalPages}}</span>
+
+      <button (click)="nextPage()" [disabled]="currentPage === totalPages" class="btn btn-primary">
+        Next
+      </button>
+  </div>
+</div>
