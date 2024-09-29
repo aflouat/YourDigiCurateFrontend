@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
-import { FeedListComponent } from './feed-list/feed-list.component';
+import { HomeComponent } from './home/home.component';
 
 export const routes: Routes = [
-      { path: 'feeds/:category', component: FeedListComponent },
-    { path: '', redirectTo: '/feeds/all', pathMatch: 'full' },];
+    { path: '',component:HomeComponent},];

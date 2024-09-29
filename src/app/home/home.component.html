@@ -1,0 +1,17 @@
+<div class="container">
+    <!-- Inclusion du header -->
+    <app-header></app-header>
+  
+    <div class="row">
+      <!-- Sidebar aligné à gauche -->
+      <div class="col-md-3">
+        <app-side-menu (categorySelected)="onCategorySelected($event)"></app-side-menu>
+      </div>
+  
+      <!-- Contenu principal : listing des feeds -->
+      <div class="col-md-9">
+        <app-feed-list [category]="selectedCategory"></app-feed-list>
+      </div>
+    </div>
+  </div>
+  

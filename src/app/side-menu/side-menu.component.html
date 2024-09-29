@@ -1,7 +1,10 @@
 <div class="sidebar">
-    <ul>
-      <li *ngFor="let category of categories">
-        <a [routerLink]="['/feeds', category]">{{ category }}</a>
-      </li>
-    </ul>
+  <h3>Catégories</h3>
+  <ul>
+    <li *ngFor="let category of categories">
+      <a (click)="selectCategory(category)" class="category-link" 
+      [ngClass]="{'active': selectedCategory === category}">{{ category }}</a>
+
+    </li>
+  </ul>
   </div>

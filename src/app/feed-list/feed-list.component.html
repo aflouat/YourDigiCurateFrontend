@@ -1,12 +1,10 @@
-<div class="container">
-  <header class="header">
-    <h1 class="text-center">Veille technologique</h1>
-    <div class="search-bar text-center">
-      <input [(ngModel)]="searchQuery"
-             (change)="applySearchFilterAndPaginate()" class="form-control" placeholder="Search feeds..." />
-    </div>
-  </header>
-  
+  <div class="search-bar text-center">
+    <input [(ngModel)]="searchQuery"
+           (change)="applySearchFilterAndPaginate()" class="form-control" placeholder="Search feeds..." />
+  </div>
+   
+    <!-- Contenu principal - listing des feeds -->
+   
   <div class="feeds-container d-flex justify-content-center flex-wrap">
 
 <div *ngFor="let feed of displayedFeeds; trackBy: trackByTitle"
@@ -20,7 +18,7 @@
     <p class="card-text"><small class="text-muted">{{ feed.date | date:'mediumDate' }} - {{ feed.category }}</small></p>
   </div>
 </div>
-
+  </div>
 
     <!-- Pagination Controls -->
     <div class="pagination-controls text-center mt-3">
@@ -34,4 +32,4 @@
         Next
       </button>
   </div>
-</div>
+ 

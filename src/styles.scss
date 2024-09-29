@@ -2,3 +2,122 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Styles pour la page d'accueil (HomeComponent) */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;  /* Utilisation de toute la hauteur de la fenêtre */
+  }
+  
+  .header {
+    background-color: #1976d2;  /* Couleur du thème Material */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Disposition pour le side menu et le contenu principal */
+  .row {
+    flex: 1;
+    display: flex;
+  }
+  
+  .side-menu {
+    width: 250px;
+    background-color: #eeeeee;  /* Couleur de fond gris clair */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .side-menu h2 {
+    font-size: 18px;
+    color: #1976d2;  /* Couleur primaire du thème */
+    margin-bottom: 10px;
+  }
+  
+  .side-menu ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .side-menu li {
+    padding: 10px 0;
+    font-size: 16px;
+  }
+  
+  .side-menu li a {
+    color: #1976d2;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  
+  .side-menu li a:hover {
+    color: #0d47a1;  /* Couleur plus foncée lors du survol */
+  }
+  
+  /* Styles pour le contenu principal */
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+  }
+  
+  .feeds-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card-body {
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-body h5 {
+    color: #1976d2;
+  }
+  
+  .card-body a {
+    color: #1976d2;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .card-body a:hover {
+    text-decoration: underline;
+  }
+  
+  .pagination-controls {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pagination-controls button {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .pagination-controls button:disabled {
+    background-color: #b0bec5;  /* Couleur désactivée */
+  }
+  
+  .pagination-controls span {
+    font-size: 16px;
+    color: #424242;
+  }
+  

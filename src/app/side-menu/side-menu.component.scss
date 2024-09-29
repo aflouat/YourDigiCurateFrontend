@@ -2,6 +2,8 @@
     width: 200px;
     background-color: #f4f4f4;
     padding: 15px;
+    flex: 0 0 250px;  // Taille fixe pour le menu latéral (250px ici)
+    margin-right: 20px;  // Espace entre le menu latéral et le contenu principal
   }
   ul {
     list-style-type: none;
@@ -13,4 +15,31 @@
   a {
     text-decoration: none;
     color: #000;
+  }
+  .container {
+    display: flex;
+    align-items: flex-start;  // Aligner les éléments en haut (ou "center" pour centrer verticalement)
+  }
+  .content {
+    flex: 1;  // Le contenu principal prend tout l'espace restant
+  }
+  .category-link {
+    color: #1976d2;  /* Couleur principale du thème */
+    font-weight: normal;
+    font-size: x-large;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;  /* Effet de transition */
+  }
+  
+  .category-link:hover {
+    background-color: #f0f0f0;  /* Couleur de fond au survol */
+    color: #0d47a1;  /* Couleur du texte au survol */
+    font-weight: bold;  /* Mettre en gras au survol */
+  }
+  .category-link.active {
+    background-color: #1976d2;  /* Couleur de fond pour la catégorie active */
+    color: white;  /* Texte blanc pour la catégorie active */
+    font-weight: bold;
   }

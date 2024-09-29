@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { NgForOf } from '@angular/common';
 import { FeedService } from '../services/feed.service';
 import { Feed } from "../models/feed.model";
@@ -7,6 +7,7 @@ import { MatFormField } from "@angular/material/form-field";
 import { NgxPaginationModule } from "ngx-pagination";
 import { DatePipe, NgClass, NgStyle } from "@angular/common";
 import { MatPaginator } from "@angular/material/paginator";
+import { SideMenuComponent } from '../side-menu/side-menu.component';
 
 @Component({
   selector: 'app-feed-list',
@@ -21,10 +22,11 @@ import { MatPaginator } from "@angular/material/paginator";
     MatPaginator,
     NgStyle,
     NgClass,
-    NgForOf
+    NgForOf,
+    SideMenuComponent
   ]
 })
-export class FeedListComponent implements OnInit {
+export class FeedListComponent implements OnInit , OnChanges{
   @Input() category: string = 'Technology'; // Catégorie sélectionnée par défaut
   feeds: Feed[] = [];
   filteredFeeds: Feed[] = [];
@@ -35,6 +37,17 @@ export class FeedListComponent implements OnInit {
   totalPages: number = 1;
 
   constructor(private feedService: FeedService) { }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.category) {
+      this.loadFeedsByCategory(this.category);  // Charger les feeds dès que la catégorie change
+    }  }
+    
+    loadFeedsByCategory(category: string): void {
+      this.feedService.getFeedsByCategory(category).subscribe(feeds => {
+        this.feeds = feeds.map(feed => ({ ...feed, hover: false }));
+        this.applySearchFilterAndPaginate();
+      });
+    }
 
   ngOnInit(): void {
     this.loadFeeds();

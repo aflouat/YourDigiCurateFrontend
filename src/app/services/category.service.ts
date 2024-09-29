@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { FeedService } from './feed.service';
 
 @Injectable({
@@ -17,6 +17,8 @@ export class CategoryService {
     const headers = new HttpHeaders().set('X-API-KEY', this.apiKey);
 
  
-    return this.http.get<string[]>(this.apiUrl,{headers});
+    return this.http.get<{ categories: string[] }>(this.apiUrl,{headers})  .pipe(
+      map(response => response.categories)  // Extraction de la propriété 'categories'
+    );
   }
 }
