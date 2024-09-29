@@ -2,3 +2,15 @@
   background-color: #f0f8ff; /* Light blue when hovered */
   transition: background-color 0.3s ease;
 }
+.container {
+  display: flex;
+}
+
+.sidebar {
+  flex: 0 0 200px;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}

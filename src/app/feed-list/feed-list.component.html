@@ -1,12 +1,12 @@
 <div class="container">
   <header class="header">
-    <h1 class="text-center">Feed List</h1>
+    <h1 class="text-center">Veille technologique</h1>
     <div class="search-bar text-center">
       <input [(ngModel)]="searchQuery"
              (change)="applySearchFilterAndPaginate()" class="form-control" placeholder="Search feeds..." />
     </div>
   </header>
-
+  
   <div class="feeds-container d-flex justify-content-center flex-wrap">
 
 <div *ngFor="let feed of displayedFeeds; trackBy: trackByTitle"

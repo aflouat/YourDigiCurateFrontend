@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgForOf } from '@angular/common';
-import { FeedService } from "../feed.service";
-import { Feed } from "../feed.model";
+import { FeedService } from '../services/feed.service';
+import { Feed } from "../models/feed.model";
 import { FormsModule } from "@angular/forms";
 import { MatFormField } from "@angular/material/form-field";
 import { NgxPaginationModule } from "ngx-pagination";
