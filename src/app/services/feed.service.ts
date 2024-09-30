@@ -27,7 +27,7 @@ export class FeedService {
   }
 
   getFeedsByCategory(category: string): Observable<Feed[]> {
-    const headers = new HttpHeaders().set('X-API-KEY', this.apiUrlGetFeedsByCategory);
+    const headers = new HttpHeaders().set('X-API-KEY',  environment.apiKey);
 
     return this.http.get<{ feeds: Feed[] }>(`${this.apiUrlGetFeedsByCategory}?category=${category}`, { headers }).pipe(
       map(response => response.feeds)
