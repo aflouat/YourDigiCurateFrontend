@@ -9,9 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: read
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -19,28 +17,15 @@ jobs:
           fetch-depth: 0
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '18'
-          cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build Angular
-        env:
-          API_URL: ${{ secrets.API_URL }}
-          API_KEY: ${{ secrets.API_KEY }}
-        run: npm run build
-
-      - name: Setup Chrome
-        id: chrome
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Test (CI) and generate coverage
-        env:
-          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
-        run: npm run test:ci
+      - name: Install & build Angular
+        run: |
+            npm ci
+            npm run build
+            npm run test:ci
 
       - name: Upload coverage artifact
         uses: actions/upload-artifact@v4
