@@ -9,9 +9,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -23,9 +28,18 @@ jobs:
         run: npm ci
 
       - name: Build Angular
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          API_KEY: ${{ secrets.API_KEY }}
         run: npm run build
 
+      - name: Setup Chrome
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+
       - name: Test (CI) and generate coverage
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
         run: npm run test:ci
 
       - name: Upload coverage artifact
@@ -37,10 +51,11 @@ jobs:
           if-no-files-found: warn
 
       - name: SonarQube Scan - Frontend
-        uses: SonarSource/sonarcloud-github-action@master
+        if: ${{ secrets.SONAR_TOKEN != '' }}
+        uses: SonarSource/sonarcloud-github-action@v2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        if: ${{ env.SONAR_TOKEN != '' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           projectBaseDir: .
           args: >
@@ -54,7 +69,7 @@ jobs:
             -Dsonar.typescript.lcov.reportPaths=coverage/**/lcov.info
 
       - name: Build Docker image
-        run: docker build -t app:latest -f Dockerfile .
+        run: docker build --build-arg API_URL=${{ secrets.API_URL }} --build-arg API_KEY=${{ secrets.API_KEY }} -t app:latest -f Dockerfile .
 
       - name: Log in to Docker Hub
         env:
