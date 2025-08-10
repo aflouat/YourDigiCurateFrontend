@@ -1,0 +1,25 @@
+# Build stage
+FROM node:20-alpine AS build
+
+WORKDIR /usr/local/app
+
+# Copy package.json and package-lock.json for caching
+COPY package.json package-lock.json ./
+RUN npm ci
+
+# Copy the rest of the application
+COPY ./ ./
+RUN npm run build -- --configuration production
+
+# Production stage
+FROM nginx:1.25-alpine
+
+# Copy custom Nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy build output from build stage
+COPY --from=build /usr/local/app/dist/your-digi-curate-frontend/browser /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
