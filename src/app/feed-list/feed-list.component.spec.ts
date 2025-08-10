@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FeedListComponent } from './feed-list.component';
+import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import {provideHttpClientTesting} from "@angular/common/http/testing";
+import {FeedService} from "../services/feed.service";
 
 describe('FeedListComponent', () => {
   let component: FeedListComponent;
@@ -8,7 +11,12 @@ describe('FeedListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [FeedListComponent]
+      imports: [FeedListComponent],
+      providers: [
+        FeedService,
+        provideHttpClient(withInterceptorsFromDi()), // fournit HttpClient
+        provideHttpClientTesting() // fournit HttpClient pour les tests
+      ]
     })
     .compileComponents();
 
