@@ -58,13 +58,19 @@ jobs:
           BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
           COMMIT_SHA=$(echo $GITHUB_SHA | head -c 7)
           
+      - name: Build Docker image
+        run: |
+          # Capture les informations dynamiquement
+          BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
+          COMMIT_SHA=$(echo $GITHUB_SHA | head -c 7)
+          
           docker build . \
+           --file Dockerfile \
            --build-arg API_URL=${{ secrets.API_URL }} \
            --build-arg API_KEY=${{ secrets.API_KEY }} \
-           --tag your-digi-curate-frontend:latest \
-           -f Dockerfile . \
-           --build-arg BUILD_DATE=$BUILD_DATE \
-           --build-arg LAST_COMMIT=$COMMIT_SHA 
+           --build-arg BUILD_DATE="$BUILD_DATE" \
+           --build-arg LAST_COMMIT="$COMMIT_SHA" \
+           --tag your-digi-curate-frontend:latest
 
       - name: Log in to Docker Hub
         env:
@@ -80,8 +86,8 @@ jobs:
           DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
           DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
         run: |
-          docker tag app:latest $DOCKERHUB_USERNAME/your-digi-curate-frontend:${{ github.sha }}
-          docker tag app:latest $DOCKERHUB_USERNAME/your-digi-curate-frontend:latest
+          docker tag your-digi-curate-frontend:latest $DOCKERHUB_USERNAME/your-digi-curate-frontend:${{ github.sha }}
+          docker tag your-digi-curate-frontend:latest $DOCKERHUB_USERNAME/your-digi-curate-frontend:latest
           docker push $DOCKERHUB_USERNAME/your-digi-curate-frontend:${{ github.sha }}
           docker push $DOCKERHUB_USERNAME/your-digi-curate-frontend:latest
 
