@@ -1,5 +1,5 @@
 {
-    "apiUrl": "http://localhost:8081/api",
+    "apiUrl": "http://srv605063.hstgr.cloud:8081/api",
     "apiKey": "test-api-key",
     "imageName": "__IMAGE_NAME__",
     "imageVersion": "__IMAGE_VERSION__",
