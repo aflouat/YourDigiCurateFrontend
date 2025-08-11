@@ -1,4 +1,8 @@
 {
     "apiUrl": "http://localhost:8081/api",
-    "apiKey": "test-api-key"
+    "apiKey": "test-api-key",
+    "imageName": "__IMAGE_NAME__",
+    "imageVersion": "__IMAGE_VERSION__",
+    "buildDate": "__BUILD_DATE__",
+    "lastCommit": "__LAST_COMMIT__"
 }
