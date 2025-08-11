@@ -1,7 +1,7 @@
 {
   "feeds": [
     {
-      "title": "Nouveautés d'Angular 18: RIP zone.js",
+      "title": "Nouveautés d'Angular 18: RIP zone.js.",
       "description": "Zone.js, responsable de la détection de changement dans Angular, est remplacé par un support sans zones offrant des améliorations en termes de performance, composabilité, et débogage simplifié.",
       "date": "2024-05-23T08:00:00Z",
       "category": "Angular",
