@@ -47,11 +47,11 @@ module.exports = function (config) {
     autoWatch: true,
     customLaunchers: {
       ChromeHeadlessCI: {
-        base: 'ChromeHeadless',
+        base: 'ChromeHeadlessCI',
         flags: ['--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage']
       }
     },
-    browsers: ['ChromeHeadlessCI'],
+    browsers: ['Chrome', 'ChromeHeadless','ChromeHeadlessCI'],
     singleRun: false,
     restartOnFileChange: true
   });
