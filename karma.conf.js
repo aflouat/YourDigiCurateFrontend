@@ -10,8 +10,6 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
-      require('karma-junit-reporter'),
-
       require('@angular-devkit/build-angular/plugins/karma')
     ],
     client: {
@@ -31,16 +29,12 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [
         { type: 'html' },
-        { type: 'lcov', subdir: '.' },
+        { type: 'lcov', subdir: '.', file: 'lcov.info' },
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml', 'coverage', 'junit'],
-    junitReporter: {
-      outputDir: 'reports',      // chemin utilisé par phoenix-actions/test-reporting
-      outputFile: 'jest-unit.xml', // correspond à path: reports/jest-*.xml
-      useBrowserName: false
-    },
+    reporters: ['progress', 'coverage'],
+
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -50,6 +44,9 @@ module.exports = function (config) {
         base: 'ChromeHeadless',
         flags: ['--headless', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage', '--remote-debugging-port=9222']
       }
+    },
+    preprocessors: {
+      'src/**/*.ts': ['coverage']
     },
     browsers: ['ChromeHeadless'],
     singleRun: false,
