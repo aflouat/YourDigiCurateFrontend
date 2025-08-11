@@ -22,4 +22,5 @@ COPY --from=build /usr/local/app/dist/your-digi-curate-frontend/browser /usr/sha
 
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+# Démarre le conteneur et remplace les variables dynamiquement
+CMD ["/bin/sh", "-c", "sed -i 's|__API_KEY__|'\"$API_KEY\"'|g' /usr/share/nginx/html/assets/config.json && sed -i 's|__API_URL__|'\"$API_URL\"'|g' /usr/share/nginx/html/assets/config.json && nginx -g 'daemon off;'"]
