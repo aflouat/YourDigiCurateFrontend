@@ -20,6 +20,8 @@ export class CategoryService {
 
   getCategories(): Observable<string[]> {
     const headers = new HttpHeaders().set('X-API-KEY', this.apiKey);
+    console.log('Fetching categories from API:', this.apiUrl + '/categories');
+    console.log('Using headers:', headers);
 
     return this.http.get<{ categories: string[] }>(this.apiUrl + '/categories', { headers }).pipe(
       map(response => response.categories)  // Extraction de la propriété 'categories'
