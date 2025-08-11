@@ -15,7 +15,6 @@
       "prefix": "app",
       "architect": {
         "build": {
-          
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/your-digi-curate-frontend",
@@ -27,7 +26,6 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-
               {
                 "glob": "**/*",
                 "input": "public"
@@ -102,9 +100,7 @@
               "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              
-            ]
+            "scripts": []
           }
         }
       }

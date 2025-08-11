@@ -1,9 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {provideHttpClientTesting} from "@angular/common/http/testing";
+import { provideHttpClientTesting } from "@angular/common/http/testing";
 import { CategoryService } from '../services/category.service';
 import { FeedService } from '../services/feed.service';
 import { SideMenuComponent } from './side-menu.component';
-import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
+import { ConfigService } from '../config.service';
+import { MockConfigService } from '../mockConfig.service';
 
 describe('SideMenuComponent', () => {
   let component: SideMenuComponent;
@@ -13,13 +15,14 @@ describe('SideMenuComponent', () => {
     await TestBed.configureTestingModule({
       imports: [SideMenuComponent],
       providers: [
-      CategoryService,
-      FeedService,
+        CategoryService,
+        FeedService,
         provideHttpClient(withInterceptorsFromDi()), // fournit HttpClient
-        provideHttpClientTesting()
-    ]
+        provideHttpClientTesting(),
+        { provide: ConfigService, useClass: MockConfigService }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(SideMenuComponent);
     component = fixture.componentInstance;

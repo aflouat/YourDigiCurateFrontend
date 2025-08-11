@@ -1,6 +1,6 @@
 {
   "name": "your-digi-curate-frontend",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -8,7 +8,7 @@
     "prebuild": "node set-env.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:ci": "ng test --watch=false --browsers=ChromeHeadlessCI --code-coverage"
+    "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage"
   },
   "private": true,
   "dependencies": {
@@ -22,10 +22,10 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+    "dotenv": "^16.4.5",
     "ngx-pagination": "^6.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
-    "dotenv": "^16.4.5",
     "your-digi-curate-frontend": "file:",
     "zone.js": "~0.14.10"
   },
@@ -40,6 +40,11 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "karma-junit-reporter": "^2.0.1",
     "typescript": "~5.5.2"
+  },
+  "jest-junit": {
+    "outputDirectory": "reports",
+    "outputName": "jest-results.xml"
   }
 }

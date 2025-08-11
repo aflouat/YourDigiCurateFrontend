@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
 import { FeedService } from './feed.service';
-import { environment } from '../../environments/environment';
 import { ConfigService } from '../config.service';
 
 

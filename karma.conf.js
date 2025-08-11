@@ -35,7 +35,7 @@ module.exports = function (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['progress', 'kjhtml','coverage','junit'],
+    reporters: ['progress', 'kjhtml', 'coverage', 'junit'],
     junitReporter: {
       outputDir: 'reports',      // chemin utilisé par phoenix-actions/test-reporting
       outputFile: 'jest-unit.xml', // correspond à path: reports/jest-*.xml
@@ -46,12 +46,12 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     customLaunchers: {
-      ChromeHeadlessCI: {
-        base: 'ChromeHeadlessCI',
-        flags: ['--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage']
+      Chrome: {
+        base: 'ChromeHeadless',
+        flags: ['--headless', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage', '--remote-debugging-port=9222']
       }
     },
-    browsers: ['Chrome', 'ChromeHeadless','ChromeHeadlessCI'],
+    browsers: ['ChromeHeadless'],
     singleRun: false,
     restartOnFileChange: true
   });

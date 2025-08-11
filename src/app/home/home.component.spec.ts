@@ -1,8 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {provideHttpClientTesting} from "@angular/common/http/testing";
+import { provideHttpClientTesting } from "@angular/common/http/testing";
 import { HomeComponent } from './home.component';
-import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
-import {CategoryService} from "../services/category.service";
+import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
+import { CategoryService } from "../services/category.service";
+import { MockConfigService } from '../mockConfig.service';
+import { ConfigService } from '../config.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -15,10 +17,11 @@ describe('HomeComponent', () => {
         CategoryService,
         provideHttpClient(withInterceptorsFromDi()), // fournit HttpClient
 
-        provideHttpClientTesting() // provides HttpClient for testing
+        provideHttpClientTesting(), // provides HttpClient for testing
+        { provide: ConfigService, useClass: MockConfigService }
       ]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
