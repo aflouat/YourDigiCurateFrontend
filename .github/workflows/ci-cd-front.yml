@@ -38,7 +38,7 @@ jobs:
             coverage/**
           if-no-files-found: warn
 
-      - name: SonarQube Scan - Frontend
+      - name: SonarQube Scan - Frontend Angular
         uses: SonarSource/sonarcloud-github-action@v2
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
