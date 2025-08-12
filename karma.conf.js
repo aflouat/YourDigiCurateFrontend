@@ -29,7 +29,7 @@ module.exports = function (config) {
       subdir: '.',
       reporters: [
         { type: 'html' },
-        { type: 'lcov', subdir: '.', file: 'lcov.info' },
+        { type: 'lcovonly', subdir: '.', file: 'lcov.info' },
         { type: 'text-summary' }
       ]
     },
@@ -44,9 +44,6 @@ module.exports = function (config) {
         base: 'ChromeHeadless',
         flags: ['--headless', '--no-sandbox', '--disable-gpu', '--disable-dev-shm-usage', '--remote-debugging-port=9222']
       }
-    },
-    preprocessors: {
-      'src/**/*.ts': ['coverage']
     },
     browsers: ['ChromeHeadless'],
     singleRun: false,
