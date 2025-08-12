@@ -55,17 +55,12 @@ jobs:
             -Dsonar.test.inclusions=**/*.spec.ts
             -Dsonar.typescript.lcov.reportPaths=coverage/**/lcov.info
 
-      - name: Build Docker image
-        run: |
-          # Capture les informations dynamiquement
-          BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          COMMIT_SHA=$(echo $GITHUB_SHA | head -c 7)
           
       - name: Build Docker image
         env:
           API_KEY: ${{ secrets.API_KEY }}
           API_URL: ${{ secrets.API_URL }}
-        run: docker build -t aflouat/your-digi-curate-frontend:latest .
+        run: docker build -t your-digi-curate-frontend:latest .
 
       - name: Log in to Docker Hub
         env:
