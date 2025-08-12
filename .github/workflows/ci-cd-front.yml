@@ -22,9 +22,12 @@ jobs:
           node-version: '18'
 
       - name: Install & build Angular
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          API_URL: ${{ secrets.API_URL }}
         run: |
             npm install
-            npm run build
+            npm run build -- --prod
             npm run test:ci
 
       - name: Upload coverage artifact

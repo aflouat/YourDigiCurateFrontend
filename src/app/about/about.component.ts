@@ -17,12 +17,9 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule]
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
   config: any;
 
   constructor(private configService: ConfigService) { }
 
-  ngOnInit() {
-    this.config = this.configService.loadConfig;
-  }
 }
