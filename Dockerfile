@@ -9,8 +9,6 @@ RUN npm ci
 
 # Copy the rest of the application
 COPY ./ ./
-ARG API_KEY
-ARG API_URL
 
 RUN npm run build -- --configuration production
 
