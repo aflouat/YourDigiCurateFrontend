@@ -27,7 +27,7 @@ jobs:
           API_URL: ${{ secrets.API_URL }}
         run: |
             npm install
-            npm run build -- --prod
+            npm run build -- --configuration production
             npm run test:ci
 
       - name: Upload coverage artifact
