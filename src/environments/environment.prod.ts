@@ -1,5 +1,6 @@
+// environment.prod.ts
 export const environment = {
     production: true,
-    apiKey: 'your-production-api-key',
-    apiUrl: 'http://app:8081/api'
+    apiKey: process.env.API_KEY || 'default-api-key',
+    apiUrl: process.env.API_URL || 'http://default-api-url'
 };

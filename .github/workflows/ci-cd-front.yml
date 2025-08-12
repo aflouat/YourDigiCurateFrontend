@@ -62,18 +62,10 @@ jobs:
           COMMIT_SHA=$(echo $GITHUB_SHA | head -c 7)
           
       - name: Build Docker image
-        run: |
-          # Capture les informations dynamiquement
-          BUILD_DATE=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          COMMIT_SHA=$(echo $GITHUB_SHA | head -c 7)
-          
-          docker build . \
-           --file Dockerfile \
-           --build-arg API_URL=${{ secrets.API_URL }} \
-           --build-arg API_KEY=${{ secrets.API_KEY }} \
-           --build-arg BUILD_DATE="$BUILD_DATE" \
-           --build-arg LAST_COMMIT="$COMMIT_SHA" \
-           --tag your-digi-curate-frontend:latest
+        env:
+          API_KEY: ${{ secrets.API_KEY }}
+          API_URL: ${{ secrets.API_URL }}
+        run: docker build -t aflouat/your-digi-curate-frontend:latest --build-arg API_KEY=$API_KEY --build-arg API_URL=$API_URL .
 
       - name: Log in to Docker Hub
         env:

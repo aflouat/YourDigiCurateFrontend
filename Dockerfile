@@ -9,6 +9,10 @@ RUN npm ci
 
 # Copy the rest of the application
 COPY ./ ./
+ARG API_KEY
+ARG API_URL
+ENV API_KEY=$API_KEY
+ENV API_URL=$API_URL
 RUN npm run build -- --configuration production
 
 # Production stage
